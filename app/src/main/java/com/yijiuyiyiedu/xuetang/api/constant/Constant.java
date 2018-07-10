@@ -22,6 +22,7 @@ public class Constant {
     public static String QQ_APP_ID = "101472918";
     public static String PARTNER_ID = "1501374291";
     public static String BUYLY_TAG = "CrashReportInfo";
+    public static String TENCENT_BASE = "http://1256959017.vod2.myqcloud.com";
 
     // 开启Log模式
     public static final boolean DEBUG = Boolean.parseBoolean("true");

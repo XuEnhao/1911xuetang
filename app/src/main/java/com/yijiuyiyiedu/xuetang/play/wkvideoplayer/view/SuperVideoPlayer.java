@@ -151,7 +151,7 @@ public class SuperVideoPlayer extends RelativeLayout {
      * @param appId
      * @param fileId
      */
-    public void startPlay(int appId,String fileId,String timeOut,String sign){
+    public void startPlay(int appId,String fileId,String timeOut,String sign,int exper){
 //        int appId;
 //        String fileId;
 //        String timeout;
@@ -159,13 +159,17 @@ public class SuperVideoPlayer extends RelativeLayout {
 //        String sign;
 //        String us;
 
+
         TXPlayerAuthBuilder authBuilder = new TXPlayerAuthBuilder();
         try {
             authBuilder.setAppId(appId);
             authBuilder.setFileId(fileId);
-            authBuilder.setTimeout(timeOut);
-            authBuilder.setSign(sign);
-            mTxplayer.startPlay(authBuilder);
+//            authBuilder.setTimeout(timeOut);
+//            authBuilder.setSign(sign);
+            authBuilder.setHttps(false);
+
+            int i = mTxplayer.startPlay(authBuilder);
+            Log.d(TAG,"code: "+i);
         } catch (NumberFormatException e) {
             ToastUtils.showShort("请输入正确的AppId");
         }

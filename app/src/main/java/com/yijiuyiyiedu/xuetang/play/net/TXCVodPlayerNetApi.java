@@ -3,8 +3,10 @@ package com.yijiuyiyiedu.xuetang.play.net;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 
 import com.tencent.liteav.basic.log.TXCLog;
+import com.yijiuyiyiedu.xuetang.api.constant.Constant;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,8 +25,8 @@ public class TXCVodPlayerNetApi {
     private static final String TAG = "TXCVodPlayerNetApi";
 
     //http://183.60.81.104/getplayinfo/v2/1255566655/4564972818519602447?&t=5c08d9fa&us=someus&sign=65b202bc855c0981da719f2d8df85859%22
-    private final String        BASE_URL = "http://playvideo.qcloud.com/getplayinfo/v2";
-    private final String        BASE_URLS= "https://playvideo.qcloud.com/getplayinfo/v2";
+    private final String        BASE_URL = "http://1256959017.vod2.myqcloud.com";
+    private final String        BASE_URLS= "http://1256959017.vod2.myqcloud.com";
     private final int SUCCESS   = 0;
     private final int FAILED    = 1;
 
@@ -73,6 +75,7 @@ public class TXCVodPlayerNetApi {
                     }
                     URL url = new URL(urlStr);
 
+                    TXCLog.d(TAG,"URL -------"+BASE_URL+"---"+BASE_URLS);
                     TXCLog.d(TAG, "getplayinfo: "+urlStr);
 
                     HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
@@ -96,6 +99,7 @@ public class TXCVodPlayerNetApi {
                     httpFailed("格式错误", -2);
                 } catch (Exception ex) {
                     ex.printStackTrace();
+                    TXCLog.d(TAG, "getplayinfo: 请求失败");
                     httpFailed("请求失败", -2);
                 }
             }

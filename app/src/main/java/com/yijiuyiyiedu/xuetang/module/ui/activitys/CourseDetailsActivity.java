@@ -633,7 +633,7 @@ public class CourseDetailsActivity extends BaseActivity implements CourseDetails
                 }
 //                videoViewDLNA.setVisibility(View.VISIBLE);//投屏 暂时去掉
 
-                mSuperVideoPlayer.startPlay(appID,fileID,t,sign);
+                mSuperVideoPlayer.startPlay(appID,fileID,t,sign,exper);
                 Log.d("videoAddress", playurl);
 //                mSuperVideoPlayer.setPlayUrl(playurl);
                 if (classImg.getVisibility()==View.VISIBLE){
