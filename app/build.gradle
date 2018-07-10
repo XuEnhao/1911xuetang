@@ -1,0 +1,221 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.yijiuyiyiedu.xuetang"
+        minSdkVersion 15
+        targetSdkVersion 26
+        //启用multidex的支持
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+            // 如果您使用的是商业版，只能使用 armeabi 架构，即：
+            // abiFilters "armeabi",
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("1911jks")      //签名文件
+            storePassword "123456"
+            keyAlias "myjks"
+            keyPassword "123456"  //签名密码
+        }
+//        debug {
+//            storeFile file('1911jks')
+//            storePassword "123456"
+//            keyAlias "myjks"
+//            keyPassword "123456"
+//        }
+    }
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+//        debug {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+    }
+
+    //打包配置
+    productFlavors {
+        wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+        huawei {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei"]
+        }
+        qh360 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "qh360"]
+        }
+        yingyongbao {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyongbao"]
+        }
+        meizu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "meizu"]
+        }
+        baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+        }
+        vivo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "vivo"]
+        }
+        oppo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "oppo"]
+        }
+    }
+    repositories {
+        flatDir { dirs 'libs' }
+    }
+}
+dependencies {
+    //乐播投屏
+    compile(name: 'hpplay-link', ext: 'aar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // import Recycler
+    compile 'com.android.support:recyclerview-v7:26.0.0'
+    implementation 'com.android.support:design:26.0.0-alpha1'
+    implementation 'com.android.support:cardview-v7:26.0.0-alpha1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //必须使用
+    compile 'com.lzy.net:okgo:3.0.4'
+
+    //以下三个选择添加，okrx和okrx2不能同时使用
+
+    //    compile 'com.lzy.net:okrx:1.0.2'
+    compile 'com.lzy.net:okrx2:2.0.2'
+    compile 'com.lzy.net:okserver:2.0.5'
+    implementation 'com.google.code.gson:gson:2.6.2'
+
+    //打包工具
+
+    //友盟统计
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
+    // 分包
+    compile 'com.android.support:multidex:1.0.0'
+
+    //侧滑recycler
+    //    compile 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+    compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+
+    // import Butterknife
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    //  侧滑退出
+    compile 'cn.bingoogolapple:bga-swipebacklayout:1.1.8@aar'
+
+    // import EventBus
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    // import Fragmentation 简化activity与fragment的使用过程
+    compile 'me.yokeyword:fragmentation:0.10.3'
+
+    // import library
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.15'
+
+    // import MagicIndicator
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.0@aar'
+
+    // import home BGbanner
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'cn.bingoogolapple:bga-banner:2.1.0@aar'
+
+    // import Glide
+//    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //    implementation 'jp.wasabeef:glide-transformations:3.1.1'
+
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+    //核心基础库，包含绝大多数功能，扩展库必须依赖本库
+    compile 'com.github.dkzwm.SmoothRefreshLayout:core:1.5.1.1'
+
+    //扩展支持二级刷新库
+    compile 'com.github.dkzwm.SmoothRefreshLayout:ext-two-level:1.5.1.1'
+
+    //下拉刷新
+    compile 'com.lcodecorex:tkrefreshlayout:1.0.4'
+
+    // import recyclerviewheader
+    compile 'com.bartoszlipinski:recyclerviewheader2:2.0.1'
+
+    //压缩图片
+
+    //    compile 'com.github.pruas:Biscuit:v1.3.0'
+    compile 'com.makeramen:roundedimageview:2.2.1'
+
+    //流世布局
+    compile 'com.hyman:flowlayout-lib:1.1.2'
+
+    // 微信
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+    //腾讯云播放器弹幕
+    compile 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
+
+    //腾讯bugly
+    compile 'com.tencent.bugly:crashreport:latest.release'
+
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+
+//    //下载进度
+    compile 'com.moos:Material-ProgressView:1.0.5'
+    //选中变大的tablayout
+//    compile 'com.androidkun:XTabLayout:1.1.3'
+    //鲁班压缩
+//    implementation 'top.zibin:Luban:1.1.7'
+    //pickerView
+    compile 'com.contrarywind:Android-PickerView:4.1.2'
+    //load 动画
+    compile 'com.zyao89:zloading:1.1.2'
+
+
+    //内存泄漏
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    //图片选择器 自带压缩和裁剪 glide4.5
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+
+    //阿里视频
+
+    //    compile(name: 'AlivcPlayer', ext: 'aar')
+
+    //    compile(name: 'AlivcReporter', ext: 'aar')
+
+    //    compile(name: 'AliyunVodPlayer', ext: 'aar')
+
+    //    compile(name: 'AliyunVodPlayerView', ext: 'aar')
+    compile files('libs/alipaySdk-20180403.jar')
+    compile files('libs/open_sdk_r5990_lite.jar')
+    compile files('libs/beecloud-2.10.0.jar')
+
+    // 导入腾讯云直播 SDK aar
+    compile(name: 'LiteAVSDK_Player_4.6.4218', ext: 'aar')
+    implementation project(':BiscuitLibrary')
+}
+

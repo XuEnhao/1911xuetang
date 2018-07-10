@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/vip_vip" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/BuyVip_statusBar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44">
+
+                <ImageView
+                    android:id="@+id/buyVip_back"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:padding="13dp"
+                    android:src="@mipmap/login_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="会员说明"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/sp_15" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_13"
+        android:paddingTop="@dimen/dp_18">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会员有效期至: "
+            android:textColor="#666666"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/buyVip_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2018年04月28日"
+            android:textColor="#222222"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/buyVip_vipInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/dp_20"
+            android:text="充值说明"
+            android:textColor="#773685"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_6"
+        android:background="@drawable/shape_buy_vip" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hpplay_transparent"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_44"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="会员充值"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_15" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/vip_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="27dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:gravity="center"
+                    android:text="充值说明"
+                    android:textColor="#222222"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:text="1. 会员用户可在有效期内免费观看1911学堂内所有课程；"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:text="2. 1911学堂会员充值方式分为“单月充值”“季度充值”“半年充值”“年充值”四种时长;"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:text="3. 最终解释权归1911学堂所有。"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/dp_10"-->
+        <!--android:background="#eeeeee"/>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_40"
+                android:gravity="center"
+                android:text="充值类型"
+                android:textColor="#222222"
+                android:textSize="@dimen/sp_15" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/buyVip_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:paddingBottom="@dimen/dp_20"
+                android:paddingLeft="20dp"
+                android:paddingRight="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_10"></android.support.v7.widget.RecyclerView>
+            <!--<com.yijiuyiyiedu.xuetang.widget.StateButton-->
+            <!--android:id="@+id/buyVip_confirm"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/dp_40"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--app:normalBackgroundColor="@drawable/shape_buy_vip_btn"-->
+            <!--android:layout_marginLeft="@dimen/dp_38"-->
+            <!--android:layout_marginRight="@dimen/dp_37"-->
+            <!--app:radius="@dimen/dp_25"-->
+            <!--app:pressedBackgroundColor="#8e4c9c"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:textSize="@dimen/sp_15"-->
+            <!--android:textStyle="bold"-->
+            <!--android:text="确认充值"/>-->
+            <TextView
+                android:id="@+id/buyVip_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="@dimen/dp_38"
+                android:layout_marginRight="@dimen/dp_37"
+                android:background="@drawable/shape_buy_vip_btn"
+                android:gravity="center"
+                android:text="确认充值"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_15"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

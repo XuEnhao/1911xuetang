@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/dp_11"
+    android:paddingLeft="@dimen/dp_5"
+    android:paddingRight="@dimen/dp_5"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_course_newCurriculumImg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_150"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop" />
+
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="@dimen/dp_150"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_course_newCurriculumName"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_width="@dimen/dp_130"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/item_course_newCurriculumNum"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_weight="1"
+            android:layout_height="@dimen/dp_130"
+            android:textSize="@dimen/sp_10"
+            android:textColor="#ffffff"
+            android:text="" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dp_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/item_course_newCurriculumPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_15" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

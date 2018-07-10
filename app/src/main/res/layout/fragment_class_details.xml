@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_details_courseScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:background="#ffffff"
+    android:visibility="visible">
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginBottom="@dimen/dp_10"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#ffffff"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingLeft="@dimen/dp_10"-->
+    <!--android:visibility="gone"-->
+    <!--android:paddingRight="@dimen/dp_10">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="@dimen/dp_20"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/fragment_details_courseName"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="高级office实践课"-->
+    <!--android:textColor="#222222"-->
+    <!--android:textSize="@dimen/sp_17"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/fragment_details_courseNum"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="(总共32节课)"-->
+    <!--android:textColor="#222222"-->
+    <!--android:textSize="@dimen/sp_12" />-->
+    <!--</LinearLayout>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/fragment_details_studyNum"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="@dimen/dp_12"-->
+    <!--android:text="学习人数：3581人"-->
+    <!--android:textColor="#666666"-->
+    <!--android:textSize="@dimen/sp_12" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="@dimen/dp_16"-->
+    <!--android:layout_marginTop="@dimen/dp_25"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="￥"-->
+    <!--android:textColor="#F4555D"-->
+    <!--android:textSize="@dimen/sp_10" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/fragment_details_price"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="3dp"-->
+    <!--android:text="199.00"-->
+    <!--android:textColor="#F4555D"-->
+    <!--android:textSize="@dimen/sp_15" />-->
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+
+    <!---->
+
+    <!--</LinearLayout>-->
+    <WebView
+        android:id="@+id/courseDetails_webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:visibility="visible" />
+
+
+</ScrollView>
+

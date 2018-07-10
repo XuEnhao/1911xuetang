@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/newCategory_linear"
+    android:layout_width="match_parent"
+    android:background="#eeeeee"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/categorySecond_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <android.support.v7.widget.Toolbar android:id="@+id/newCategory_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:contentInsetStart="0dp"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:background="#ffffff">
+
+            <ImageView
+                android:id="@+id/categorySecond_back"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_centerVertical="true"
+                android:padding="13dp"
+                android:src="@mipmap/register_back" />
+
+            <TextView
+                android:id="@+id/categorySecond_title"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_44"
+                android:text=""
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/sp_15"
+                android:textColor="#333333"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/categorySecond_screen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_centerVertical="true"
+                android:text="筛选"
+                android:textColor="#333333"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/categorySecond_drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/newCategorySecond_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                app:tr_enable_loadmore="false"
+                android:id="@+id/newCategory_refreshLayout"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/categorySecond_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:overScrollMode="never"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:paddingLeft="@dimen/dp_10"></android.support.v7.widget.RecyclerView>
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/newCategorySecond_right"
+            android:layout_width="256dp"
+            android:layout_gravity="right"
+            android:background="#ffffff"
+            android:layout_height="match_parent">
+
+            <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/id_flowlayout"
+                zhy:max_select="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"></com.zhy.view.flowlayout.TagFlowLayout>
+        </RelativeLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</LinearLayout>

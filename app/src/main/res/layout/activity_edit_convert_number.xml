@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <View
+        android:id="@+id/addEvaluate_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/addEvaluate_back"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerVertical="true"
+            android:padding="13dp"
+            android:src="@mipmap/register_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_44"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp_15"
+            android:text="兑换课程"
+            android:textColor="#333333"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <com.yijiuyiyiedu.xuetang.module.ui.custom.SpaceEditText
+        android:id="@+id/editConvert_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_60"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:hint="请输入课程兑换码"
+        android:maxLength="19"
+        android:inputType="number"
+        android:singleLine="true"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        android:gravity="start|center_vertical"
+        android:textColor="#222222"
+        android:background="#eeeeee"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="31dp"
+        android:orientation="horizontal">
+        <com.yijiuyiyiedu.xuetang.widget.StateButton
+            android:id="@+id/editConvert_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            app:radius="4dp"
+            app:normalStrokeWidth="1dp"
+            android:layout_marginLeft="38dp"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            app:normalStrokeColor="#773685"
+            android:textColor="#773685"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            app:normalBackgroundColor="#ffffff"
+            app:pressedBackgroundColor="#E6E6E6"
+            app:pressedStrokeColor="#773685"
+            app:pressedStrokeWidth="1dp"
+            android:text="取消"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            />
+        <com.yijiuyiyiedu.xuetang.widget.StateButton
+            android:id="@+id/editConvert_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            app:radius="4dp"
+            app:normalStrokeWidth="1dp"
+            app:pressedStrokeWidth="1dp"
+            android:layout_marginRight="38dp"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            app:normalStrokeColor="#773685"
+            app:pressedStrokeColor="#773685"
+            app:normalBackgroundColor="#773685"
+            app:pressedBackgroundColor="#9a37b0"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            android:text="确定"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#F8F9FB">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/settings_back"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/normal_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:text="我的消息"
+            android:textSize="@dimen/sp_19"
+            android:textColor="@color/titleTextColor"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/msgManager_recycler"
+        android:paddingLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:overScrollMode="never"
+        android:paddingRight="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

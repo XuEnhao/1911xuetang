@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <ExpandableListView
+        android:paddingTop="@dimen/dp_20"
+        android:id="@+id/fragment_classContents_expand"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:overScrollMode="never"
+        android:divider="@null"
+        android:groupIndicator="@null"
+        android:layout_height="wrap_content"></ExpandableListView>
+    <ImageView
+        android:id="@+id/classContent_download"
+        android:layout_width="@dimen/dp_76"
+        android:layout_height="@dimen/dp_76"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/course_details_download" />
+
+
+</RelativeLayout>

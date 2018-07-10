@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#ffffff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:layout_height="@dimen/dp_50">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp_19"
+            android:textColor="@color/titleTextColor"
+            android:text="分类"/>
+        <ImageView
+            android:id="@+id/fragment_newCategory_search"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:padding="@dimen/dp_9"
+            android:layout_marginRight="@dimen/dp_6"
+            android:scaleType="centerCrop"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/home_search"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_newCategory_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:background="#F2F3F7"
+            android:layout_height="match_parent"/>
+        <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/fragment_newCategory_flowLayout"
+            zhy:max_select="-1"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.zhy.view.flowlayout.TagFlowLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

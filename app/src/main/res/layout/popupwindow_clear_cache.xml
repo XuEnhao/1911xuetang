@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F8F9FB">
+
+    <TextView
+        android:id="@+id/man"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:gravity="center"
+        android:textSize="@dimen/sp_16"
+        android:textColor="#25265E"
+        android:background="#ffffff"
+        android:text="确定清除缓存" />
+
+
+
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:textColor="#25265E"
+        android:textSize="@dimen/sp_16"
+        android:text="取消" />
+
+</LinearLayout>

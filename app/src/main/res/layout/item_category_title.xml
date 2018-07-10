@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="#F2F3F7"
+    android:gravity="center_vertical"
+    android:id="@+id/item_category_liner"
+    android:layout_height="@dimen/dp_57">
+    <TextView
+        android:id="@+id/item_category_cursor"
+        android:layout_width="@dimen/dp_3"
+        android:layout_height="@dimen/dp_20"
+        android:visibility="invisible"
+        android:background="#6317A5"/>
+    <TextView
+        android:id="@+id/item_category_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#25265E"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:textSize="@dimen/sp_15"
+        android:text="干部通用学院"/>
+
+</LinearLayout>

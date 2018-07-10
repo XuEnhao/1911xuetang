@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EEEEEE">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:text="学习"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee">
+        <LinearLayout
+            android:id="@+id/study_emptyLinear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/study_empty" />
+
+            <TextView
+                android:id="@+id/nothing_buy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/sp_14"
+                android:textColor="#666666"
+                android:text="现在还没有课程，快去购买吧" />
+        </LinearLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_32"
+                android:orientation="vertical">
+                <!--企业购买-->
+                <LinearLayout
+                    android:id="@+id/study_companyBuy"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#ffffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dp_13"
+                            android:layout_marginBottom="@dimen/dp_13"
+                            android:src="@mipmap/course_sign" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_3"
+                            android:layout_weight="1"
+                            android:text="单位购买"
+                            android:textSize="@dimen/sp_14"
+                            android:textColor="#333333"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/studyFragment_companyName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Sony中国集团有限公司"
+                            android:textSize="@dimen/sp_12"
+                            android:textColor="#666666"
+                            android:gravity="center_vertical"
+                            android:layout_marginRight="10dp" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/study_companyBuyRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+                <!--个人购买-->
+                <LinearLayout
+                    android:id="@+id/study_personalBuy"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#ffffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dp_13"
+                            android:layout_marginBottom="@dimen/dp_13"
+                            android:src="@mipmap/course_sign" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/dp_3"
+                            android:text="个人购买"
+                            android:textSize="@dimen/sp_14"
+                            android:textColor="#333333"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/studyFragment_userName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="王子铃铛"
+                            android:textSize="@dimen/sp_12"
+                            android:textColor="#666666"
+                            android:gravity="center_vertical"
+                            android:layout_marginRight="10dp" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/study_personalBuyRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+    </RelativeLayout>
+
+
+</LinearLayout>

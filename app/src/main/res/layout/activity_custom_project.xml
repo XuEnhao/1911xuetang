@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/customProject_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/customProject_back"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerVertical="true"
+            android:padding="13dp"
+            android:src="@mipmap/register_back" />
+
+        <TextView
+            android:id="@+id/customProject_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_44"
+            android:text="党政干部定制研修项目"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp_15"
+            android:textColor="#333333"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/customProject_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_14"
+            android:textColor="#333333"
+            android:layout_marginRight="@dimen/dp_11"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:text="筛选" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/customProject_drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/customProject_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eeeeee"
+                android:orientation="vertical">
+
+                <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                    android:id="@+id/customProject_refreshLayout"
+                    app:tr_enable_loadmore="false"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/customProject_recycler"
+                        android:layout_width="match_parent"
+                        android:overScrollMode="never"
+                        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+                </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+                <com.yijiuyiyiedu.xuetang.widget.StateButton
+                    android:id="@+id/customProject_custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:paddingLeft="@dimen/dp_45"
+                    android:paddingRight="@dimen/dp_45"
+                    android:text="定制项目"
+                    android:textColor="#ffffff"
+                    app:normalBackgroundColor="#773685"
+                    app:pressedBackgroundColor="#9a37b0"
+                     />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/customProject_right"
+            android:layout_width="256dp"
+            android:layout_gravity="right"
+            android:background="#ffffff"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/customProject_rightRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</LinearLayout>

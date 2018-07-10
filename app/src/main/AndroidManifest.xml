@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yijiuyiyiedu.xuetang"> <!-- 阿里冲突 -->
+    <uses-sdk
+        android:minSdkVersion="15"
+        tools:overrideLibrary="com.aliyun.vodplayer.media,com.aliyun.vodplayerview.widget,com.moos.library" />
+    <!-- //权限 -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 乐播sdk -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 支付宝权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 腾讯播放器 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.Camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- bugly -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <meta-data
+        android:name="UMENG_APPKEY"
+        android:value="5abb033db27b0a0bc20001b3" />
+
+    <!-- //友盟统计 -->
+    <meta-data
+        android:name="UMENG_CHANNEL"
+        android:value="${UMENG_CHANNEL_VALUE}" />
+
+    <!-- //适配华为全屏黑框问题 -->
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.1" />
+
+    <application
+        android:name=".api.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 聚合 测试  线上不需要 -->
+        <activity
+            android:name="cn.beecloud.BCMockPayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;聚合微信支付 -->
+        <activity
+            android:name="cn.beecloud.BCWechatPaymentActivity"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity-alias
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="cn.beecloud.BCWechatPaymentActivity" />
+        <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;聚合支付宝支付 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!-- 聚合支付 beeCloud -->
+
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wx1e93e301d703d535" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/AppWXEntry"></activity>
+        <!-- qq登录 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent101472918" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 支付宝支付 -->
+        <!-- <activity -->
+        <!-- android:name="com.alipay.sdk.app.H5PayActivity" -->
+        <!-- android:configChanges="orientation|keyboardHidden|navigation|screenSize" -->
+        <!-- android:exported="false" -->
+        <!-- android:screenOrientation="behind" -->
+        <!-- android:windowSoftInputMode="adjustResize|stateHidden"></activity> -->
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".module.ui.activitys.WelcomeActivity"
+            android:theme="@style/AppWelcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".module.ui.activitys.NewsChannelActivity" />
+        <!-- 登录 -->
+        <activity
+            android:name=".module.ui.activitys.LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 密码登录 -->
+        <activity
+            android:name=".module.ui.activitys.PassLoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 短信登录 -->
+        <activity
+            android:name=".module.ui.activitys.NoteLoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 忘记密码 -->
+        <activity
+            android:name=".module.ui.activitys.ForgetPasswordActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 课程详情 -->
+        <activity
+            android:name=".module.ui.activitys.CourseDetailsActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask" />
+        <!-- 注册 -->
+        <activity android:name=".module.ui.activitys.RegisterActivity" />
+        <!-- 搜索 -->
+        <activity android:name=".module.ui.activitys.SearchActivity" />
+        <!-- 搜索展示 -->
+        <activity android:name=".module.ui.activitys.SearchCurriculumActivity" />
+        <!-- 欢迎页面 -->
+        <activity
+            android:name=".module.ui.activitys.MainActivity"
+            android:launchMode="singleTask" />
+        <!-- 企业填写注册信息 -->
+        <!-- 绑定手机号页面 -->
+        <activity android:name=".module.ui.activitys.BindPhoneActivity" />
+        <!-- 设置页面 -->
+        <activity android:name=".module.ui.activitys.SettingsActivity" />
+        <!-- 收藏页面 -->
+        <activity android:name=".module.ui.activitys.CollectActivity" />
+        <!-- 分类 -->
+        <activity android:name=".module.ui.activitys.CategoryActivity" />
+        <!-- 申请企业账号 -->
+        <activity android:name=".module.ui.activitys.ApplyCompanyNumberActivity" />
+        <!-- 编辑个人信息 -->
+        <activity android:name=".module.ui.activitys.EditMyselfInfoActivity" />
+        <!-- 管理企业子账号 -->
+        <!-- 添加子账号 -->
+        <activity android:name=".module.ui.activitys.EditSonAccountActivity" />
+        <!-- 编辑子账号 -->
+        <activity android:name=".module.ui.activitys.SonAccountInfoActivity" />
+        <!-- 消息管理 -->
+        <activity android:name=".module.ui.activitys.MsgManagerActivity" />
+        <!-- 修改密码 -->
+        <activity android:name=".module.ui.activitys.UpdatePasswordActivity" />
+        <!-- 购买页面 -->
+        <activity android:name=".module.ui.activitys.BuyCourseActivity" />
+        <!-- 购买记录 -->
+        <activity android:name=".module.ui.activitys.BuyRecordActivity" />
+        <!-- 支付页面 -->
+        <activity android:name=".module.ui.activitys.PayActivity" />
+        <!-- h5支付页面 -->
+        <activity android:name=".module.ui.activitys.PayWebViewActivity" />
+        <!-- 支付宝支付成功 -->
+        <activity android:name=".alipay.AlipayResultActivity" />
+        <!-- 播放课程页面 -->
+        <!-- 名师推荐搜索框 -->
+        <activity android:name=".module.ui.activitys.SearchRecommendActivity" />
+        <!-- 评论 -->
+        <activity android:name=".module.ui.activitys.AddEvaluateActivity" />
+        <!-- 定制项目 -->
+        <activity
+            android:name=".module.ui.activitys.CustomProjectActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 锁屏界面 -->
+        <!-- android:configChanges="orientation|screenSize" -->
+        <activity
+            android:name=".module.ui.activitys.LockScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.onenineoneone.onenineoneonext.module.ui.activitys.LockScreenActivity"
+            android:theme="@style/LockScreenBase" />
+        <!-- 新版分类 一二级列表 -->
+        <activity android:name=".module.ui.activitys.NewCategoryActivity" />
+        <!-- 分类二级列表 -->
+        <activity android:name=".module.ui.activitys.NewCategorySecondActivity" />
+        <!-- 项目详情 -->
+        <activity android:name=".module.ui.activitys.ProjectDetailsActivity" />
+        <!-- 定制项目页面 -->
+        <activity
+            android:name=".module.ui.activitys.CustomProjectContentActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 填写兑换码 -->
+        <activity android:name=".module.ui.activitys.EditConvertNumberActivity" />
+        <!-- 会员充值 -->
+        <!-- 购买项目 -->
+        <activity android:name=".module.ui.activitys.BuyProjectActivity" />
+        <!-- 学堂资讯详情 -->
+        <activity android:name=".module.ui.activitys.SchoolMsgActivity" />
+        <!-- 购买项目 项目详情也 -->
+        <activity android:name=".module.ui.activitys.BoughtProjectDetailsActivity" />
+        <!-- 查看兑换码 -->
+        <activity android:name=".module.ui.activitys.SelectConvertNumActivity" />
+        <!-- 查看兑换码使用情况 -->
+        <activity android:name=".module.ui.activitys.SelectUseConvertNumActivity" />
+        <!-- 资讯详情 -->
+        <activity android:name=".module.ui.activitys.SchoolMsgMoreActivty" />
+        <!-- 职业 -->
+        <activity android:name=".module.ui.activitys.PositionActivity" />
+        <!-- 个人信息 -->
+        <activity
+            android:name=".module.ui.activitys.UserInfoActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 最新好课列表 -->
+        <activity android:name=".module.ui.activitys.NewCourseActivity" />
+        <!-- 经典好课列表 -->
+        <activity android:name=".module.ui.activitys.ClassicCourseActivity" />
+        <!-- 名师大咖秀列表 -->
+        <activity android:name=".module.ui.activitys.TeacherActivity" />
+        <!-- 课程id -->
+        <activity android:name=".module.ui.activitys.CourseIdActivity" />
+        <!-- 添加绑定课程id -->
+        <activity android:name=".module.ui.activitys.AddCourseIdActivity" />
+        <!-- 最近学习 -->
+        <activity android:name=".module.ui.activitys.LateStudyActivity" />
+        <!-- 下载页面 -->
+        <activity android:name=".module.ui.activitys.DownloadActivity" />
+        <!-- 反馈建议 -->
+        <activity android:name=".module.ui.activitys.SuggestActivity" />
+        <!-- 合作伙伴列表页面 -->
+        <activity android:name=".module.ui.activitys.FriendActivity" />
+        <!-- 下载详情 -->
+        <activity android:name=".module.ui.activitys.DownloadDetailsActivity" />
+        <!-- 定制课程 -->
+        <activity android:name=".module.ui.activitys.CustomCourseActivity" />
+        <!-- 线下活动 -->
+        <activity android:name=".module.ui.activitys.OfflineActivity" />
+        <!-- 学位项目 -->
+        <activity android:name=".module.ui.activitys.StudyProjectActivity" />
+        <!-- hr入口 -->
+        <activity android:name=".module.ui.activitys.HrEnterActivity" />
+        <!--联系商务-->
+        <activity android:name=".module.ui.activitys.CallBusinessActivity" />
+        <!--关于我们-->
+        <activity android:name=".module.ui.activitys.AboutUsActivity" />
+        <!--教师详情-->
+        <activity android:name=".module.ui.activitys.TeacherDetailsActivity" />
+        <activity android:name=".ServiceActivity" />
+        <!-- test -->
+        <activity
+            android:name=".test.Test"
+            android:configChanges="orientation|screenSize" />
+
+        <service android:name=".DownloadService"
+            android:exported="true"
+            >
+
+        </service>
+        <service
+            android:name=".MyService"
+            android:exported="true"
+            android:label="MyService" />
+
+
+        <!-- 7.0适配相机 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.yijiuyiyiedu.xuetang"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+    </application>
+
+</manifest>

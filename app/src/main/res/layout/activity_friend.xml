@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ffffff" android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/friend_scrollView"
+        android:layout_width="match_parent"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_236">
+
+
+                <ImageView
+                    android:id="@+id/friend_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_236"
+                    android:src="@mipmap/friend_banner"
+                    android:scaleType="centerCrop" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <View
+                        android:id="@+id/friend_statusBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"/>
+                    <RelativeLayout
+                        android:id="@+id/friend_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_44"
+                        android:background="#00ffffff">
+
+                        <ImageView
+                            android:id="@+id/addCourseId_back"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/dp_10"
+                            android:src="@mipmap/back_write" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_44"
+                            android:text="合作伙伴"
+                            android:layout_centerInParent="true"
+                            android:textSize="@dimen/sp_19"
+                            android:textColor="#FFFFFF"
+                            android:gravity="center" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/home_search"
+                            android:visibility="gone"
+                            android:layout_marginRight="@dimen/dp_16"
+                            android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/friend_recyclerView"
+                android:layout_width="match_parent"
+                android:overScrollMode="never"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>

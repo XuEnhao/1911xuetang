@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/applyCompanyNumber_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/applyCompanyNumber_back"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerVertical="true"
+            android:padding="13dp"
+            android:src="@mipmap/register_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_44"
+            android:text="单位账号申请"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp_15"
+            android:textColor="#333333"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_17"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="@dimen/dp_13"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:src="@mipmap/apply_company_number" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="#333333"
+                    android:text="申请说明" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_18"
+                android:paddingRight="@dimen/dp_18"
+                android:textSize="@dimen/sp_13"
+                android:textColor="#333333"
+                android:lineSpacingExtra="6dp"
+                android:text="点左上角“免费注册”。新页面打开后输入你想要的用户名，输入两遍密码（密码尽量复杂点），输入图片中的验证码，点击“同意协议并注册”。如果以上输入都没有错误，那么淘宝网将进入注册账户第二步：验证账户信息。请确保你拥有一个手机并能正常接收手机短信。" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_17"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="@dimen/dp_13"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:src="@mipmap/apply_company_number" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="#333333"
+                    android:text="申请条件" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_18"
+                android:paddingRight="@dimen/dp_18"
+                android:textSize="@dimen/sp_13"
+                android:textColor="#333333"
+                android:lineSpacingExtra="6dp"
+                android:text="点左上角“免费注册”。新页面打开后输入你想要的用户名，输入两遍密码（密码尽量复杂点），输入图片中的验证码，点击“同意协议并注册”。如果以上输入都没有错误，那么淘宝网将进入注册账户第二步：验证账户信息。请确保你拥有一个手机并能正常接收手机短信。" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_17"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="@dimen/dp_13"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:src="@mipmap/apply_company_number" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="#333333"
+                    android:text="单位账号说明" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_18"
+                android:paddingRight="@dimen/dp_18"
+                android:paddingBottom="@dimen/dp_18"
+                android:textSize="@dimen/sp_13"
+                android:textColor="#333333"
+                android:lineSpacingExtra="6dp"
+                android:text="点左上角“免费注册”。新页面打开后输入你想要的用户名，输入两遍密码（密码尽量复杂点），输入图片中的验证码，点击“同意协议并注册”。如果以上输入都没有错误，那么淘宝网将进入注册账户第二步：验证账户信息。请确保你拥有一个手机并能正常接收手机短信。" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/applyCompanyNumber_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="#773685"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/sp_15"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="申请单位账号" />
+
+</LinearLayout>

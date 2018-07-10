@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yijiuyiyiedu.xuetang.module.ui.activitys.BuyRecordActivity">
+
+    <View
+        android:id="@+id/buyRecord_statuBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/buyRecord_back"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:padding="15dp"
+            android:src="@mipmap/classdetails_back"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:text="购买记录"
+            android:textSize="@dimen/sp_15"
+            android:textColor="#333333"
+            android:gravity="center" />
+    </RelativeLayout>
+    <!--<com.flyco.tablayout.CommonTabLayout-->
+        <!--android:id="@+id/buyRecord_tabLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/dp_40"-->
+        <!--android:background="#ffffff"-->
+        <!--app:tl_textSelectColor="#773685"-->
+        <!--app:tl_textUnselectColor="#999999"-->
+        <!--app:tl_iconVisible="false"-->
+        <!--app:tl_indicator_height="2dp"-->
+        <!--app:tl_indicator_width="@dimen/dp_50"-->
+        <!--app:tl_indicator_color="#773685"-->
+        <!--app:tl_textsize="@dimen/sp_15"></com.flyco.tablayout.CommonTabLayout>-->
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/buyRecord_viewPager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"></android.support.v4.view.ViewPager>-->
+</LinearLayout>

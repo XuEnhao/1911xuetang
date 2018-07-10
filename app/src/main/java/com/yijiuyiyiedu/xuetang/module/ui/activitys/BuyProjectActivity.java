@@ -1,0 +1,279 @@
+package com.yijiuyiyiedu.xuetang.module.ui.activitys;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.yijiuyiyiedu.xuetang.R;
+import com.yijiuyiyiedu.xuetang.api.constant.UriConstant;
+import com.yijiuyiyiedu.xuetang.module.base.BaseActivity;
+import com.yijiuyiyiedu.xuetang.module.entity.BuyCourseEntity;
+import com.yijiuyiyiedu.xuetang.module.entity.OrderEntity;
+import com.yijiuyiyiedu.xuetang.module.entity.ProjectDetailsEntity;
+import com.yijiuyiyiedu.xuetang.module.persenter.BuyCoursePresenter;
+import com.yijiuyiyiedu.xuetang.module.view.BuyCourseView;
+import com.yijiuyiyiedu.xuetang.utils.GlideUtils;
+import com.yijiuyiyiedu.xuetang.utils.JumpUtil;
+import com.yijiuyiyiedu.xuetang.utils.ProgressDialogUtils;
+import com.yijiuyiyiedu.xuetang.utils.UtilToast;
+import com.yijiuyiyiedu.xuetang.utils.titlebar.StatusBarUtil;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+/**
+ * Created by xuenhao on 2018/3/23.
+ * /购买项目页面
+ */
+
+public class BuyProjectActivity extends BaseActivity implements BuyCourseView {
+
+    @BindView(R.id.applyCompanyNumber_back)
+    ImageView back;//返回
+    @BindView(R.id.buyCourse_buyUser)
+    TextView buyUser;//购买用户
+//    @BindView(R.id.buyCourse_accountType)
+//    TextView accountType;//账户类型
+    @BindView(R.id.buyCourse_phone)
+    TextView phone;//手机号
+    @BindView(R.id.buyCourse_courseImg)
+    ImageView courseImg;//课程图片
+    @BindView(R.id.buyCourse_courseName)
+    TextView courseName;//课程名字
+    @BindView(R.id.buyCourse_bought)
+    TextView bought;//已购买
+    @BindView(R.id.buyCourse_newAddNum)
+    TextView newAddNum;//新增人数
+    @BindView(R.id.buyCourse_onePrice)
+    TextView onePrice;//单价
+    @BindView(R.id.buyCourse_num)
+    TextView courseNum;//课程人数
+    @BindView(R.id.buyCourse_finalPrice)
+    TextView finalPrice;//最终价格
+    @BindView(R.id.buyCourse_buy)
+    TextView buy;//去付款
+    @BindView(R.id.buyCourse_number)
+    EditText editTextnumber;
+    private String curriculumId;
+    private BuyCoursePresenter mPresenter;
+    private String user_type;
+    private Context mContext;
+    private int orderId;
+    private String price;
+    private String className;
+    private int number1 = 1;
+    //    private Handler handler = new Handler(){
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            Intent it = new Intent(mContext,PayWebViewActivity.class);
+//            it.putExtra("orderId",msg.what);
+//            startActivity(it);
+//            finish();
+//        }
+//    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_buy_course);
+        ButterKnife.bind(this);
+        StatusBarUtil.setStatusBar(this, R.id.buyCourse_statusBar);
+//        setStatusBars();
+        mContext = this;
+        editTextnumber.setCursorVisible(false);//取消光标
+        editTextnumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextnumber.setCursorVisible(true);
+            }
+        });
+        getIntentData();
+        loadData();
+    }
+
+
+    /**
+     * 加载数据
+     */
+    private void loadData() {
+        mPresenter = new BuyCoursePresenter(this);
+        mPresenter.getBuyCourseData(getIntent().getStringExtra("curriculumId"), UriConstant.userId);
+//        mPresenter.getProjectData(getIntent().getStringExtra("curriculumId"), UriConstant.userId);
+        Log.d("tag", "projectId:"+getIntent().getStringExtra("curriculumId")+"BoughtProjectDetailsActivity.projectId:"+BoughtProjectDetailsActivity.projectId
+        +"UriConstant.userId:"+UriConstant.userId);
+    }
+
+    /**
+     * 获取传过来的课程id
+     */
+    private void getIntentData() {
+        curriculumId = getIntent().getStringExtra("curriculumId");
+    }
+    private void initView() {
+        editTextnumber.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!TextUtils.isEmpty(editTextnumber.getText().toString())) {
+                    double v = Double.parseDouble(price) * Integer.parseInt(editTextnumber.getText().toString());
+                    number1 = Integer.parseInt(editTextnumber.getText().toString());
+                    finalPrice.setText(v + "");
+                    editTextnumber.setSelection(editTextnumber.getText().length());
+                } else {
+                    number1 = 1;
+                    double v = Double.parseDouble(price) * number1;
+                    editTextnumber.setText(1 + "");
+                    finalPrice.setText(v + "");
+                    editTextnumber.setSelection(editTextnumber.getText().length());
+                }
+            }
+        });
+    }
+
+    /**
+     * 设置沉浸式
+     */
+    private void setStatusBars() {
+        // 设置透明导航栏
+        StatusBarUtil.setTranslucentForImageView(this, 20, null);
+        int statusBarHeight = StatusBarUtil.getStatusBarHeight(this);
+        View viewById = findViewById(R.id.buyCourse_statusBar);
+        ViewGroup.LayoutParams layoutParams = viewById.getLayoutParams();
+        layoutParams.height = statusBarHeight;
+    }
+
+    @Override
+    public void showLoading() {
+//跳转选择付款
+        ProgressDialogUtils.getInstance(mContext).showDialog();
+    }
+
+    @Override
+    public void hideLoading() {
+        ProgressDialogUtils.getInstance(mContext).dismissDialog();
+    }
+
+    /**
+     * 确认支付信息
+     *
+     * @param data
+     */
+    @Override
+    public void showData(BuyCourseEntity data) {
+        if (data.getStatus().equals("1")) {
+//            UtilToast.showToast(this, data.getMsg());
+            buyUser.setText(data.getData().getInfo().getNick_name() + "");//用户名
+            BuyCourseEntity.DataBean.InfoBean bean = data.getData().getInfo();
+            user_type = bean.getUser_type();
+            BuyCourseEntity.DataBean.CurridataBean courseBean = data.getData().getCurridata();
+            courseNum.setText("永久有效");//份数
+            bought.setVisibility(View.INVISIBLE);
+            newAddNum.setVisibility(View.INVISIBLE);
+            phone.setText(data.getData().getInfo().getUser_name());//手机号
+        } else {
+            UtilToast.showToast(mContext, data.getMsg());
+        }
+
+    }
+
+    @Override
+    public void showOrderData(OrderEntity data) {
+        if (data.getStatus().equals("1")) {
+            orderId = data.getData().getId();
+            Intent it = new Intent(mContext, PayActivity.class);
+            it.putExtra("orderId", data.getData().getId());
+            it.putExtra("price", price);
+            it.putExtra("className", className);
+            it.putExtra("type", 2);
+            startActivity(it);
+        } else {
+            UtilToast.showToast(this, data.getMsg());
+        }
+    }
+
+    @Override
+    public void showProjectData(ProjectDetailsEntity data) {
+        if (data.getStatus().equals("1")){
+            ProjectDetailsEntity.DataBean.ProjectDetailBean projectDetail = data.getData().getProjectDetail();
+            GlideUtils.loadImage(this, projectDetail.getProject_cover(), courseImg);//图片
+            className = projectDetail.getProject_name();
+            courseName.setText(projectDetail.getProject_name());//课程名字
+            onePrice.setText(projectDetail.getProject_price() + "");//现价价格
+            price = (projectDetail.getProject_price());
+            finalPrice.setText(projectDetail.getProject_price() + "");//最终价格
+            initView();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+//        handler.removeMessages();
+    }
+
+    @Override
+    public void showFailureMessage(String msg) {
+
+    }
+
+    @Override
+    public void showErrorMessage() {
+
+    }
+
+    @OnClick(R.id.buyCourse_buy)//点击去付款
+    public void onViewClicked() {
+//        pay_type 购买类型  1 课程  2 项目 3充值
+//        mPresenter.getOrderData(getIntent().getStringExtra("curriculumId"), price,editTextnumber.getText().toString(), user_type, UriConstant.userId, "2");
+//        mPresenter.getOrderData(curriculumId, "0.01", courseName.getText().toString(), user_type, UriConstant.userId,"1");
+    }
+
+    @OnClick({R.id.applyCompanyNumber_back, R.id.buyCourse_del, R.id.buyCourse_add})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.applyCompanyNumber_back:
+                JumpUtil.overiderAnimsition(this);
+                break;
+            case R.id.buyCourse_del:
+                if (number1 > 1) {
+                    number1--;
+                } else {
+                    UtilToast.showToast(mContext, "不能在减了");
+                }
+                double i = Double.parseDouble(price) * number1;
+                finalPrice.setText(i + "");//价钱
+                editTextnumber.setText(number1 + "");//份数
+                break;
+            case R.id.buyCourse_add:
+                if (number1 < 999) {
+                    number1++;
+                } else {
+                    UtilToast.showToast(mContext, "不能在加了");
+                }
+                double i1 = Double.parseDouble(price) * number1;
+                finalPrice.setText(i1 + "");//价钱
+                editTextnumber.setText(number1 + "");//份数
+                break;
+        }
+    }
+}

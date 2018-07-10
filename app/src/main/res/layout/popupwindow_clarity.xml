@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F8F9FB">
+
+    <TextView
+        android:id="@+id/man"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:gravity="center"
+        android:textSize="@dimen/sp_16"
+        android:textColor="#25265E"
+        android:background="#ffffff"
+        android:text="高清" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F8F9FB" />
+
+    <TextView
+        android:id="@+id/woman"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:textSize="@dimen/sp_16"
+        android:textColor="#25265E"
+        android:text="流畅" />
+
+
+    <TextView
+        android:id="@+id/privary"
+        android:padding="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/sp_14"
+        android:background="#ffffff"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:text="保密" />
+
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:textColor="#25265E"
+        android:textSize="@dimen/sp_16"
+        android:text="取消" />
+
+</LinearLayout>

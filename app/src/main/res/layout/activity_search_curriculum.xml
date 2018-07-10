@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <View
+        android:id="@+id/search_curriculum_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_main_search"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_height="@dimen/dp_26">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:src="@mipmap/main_search" />
+
+            <EditText
+                android:id="@+id/search_searchView"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shape_main_search"
+                android:gravity="center_vertical"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="@dimen/dp_10"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_12"
+                android:textColor="#333333"
+                android:layout_height="@dimen/dp_26" />
+        </LinearLayout>
+
+        <!--<EditText-->
+            <!--android:id="@+id/search_searchView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/shape_main_search"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingLeft="@dimen/dp_32"-->
+            <!--android:textSize="@dimen/sp_12"-->
+            <!--android:imeOptions="actionSearch"-->
+            <!--android:textColor="#333333"-->
+            <!--android:text="今我来思，雨雪霏霏"-->
+            <!--android:layout_margin="@dimen/dp_10"-->
+            <!--android:layout_height="@dimen/dp_26" />-->
+
+        <TextView
+            android:id="@+id/search_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="26dp"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:textColor="#666666"
+            android:textSize="@dimen/sp_14"
+            android:gravity="center"
+            android:text="取消" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/search_recycler"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_29"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="没有更多内容了" />
+
+
+</LinearLayout>

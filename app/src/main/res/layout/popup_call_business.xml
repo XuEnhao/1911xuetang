@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:background="@drawable/shape_call_bus_success"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_26"
+            android:layout_marginBottom="@dimen/dp_26"
+            android:src="@mipmap/call_business_success"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_19"
+            android:textColor="@color/titleTextColor"
+            android:layout_gravity="center_horizontal"
+            android:text="恭喜您提交成功"/>
+        <TextView
+            android:layout_marginTop="@dimen/dp_26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_16"
+            android:gravity="center"
+            android:textColor="@color/titleTextColor"
+            android:layout_gravity="center"
+            android:text="我们的商务人员将在60分钟内与您联系"/>
+        <TextView
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="@dimen/dp_32"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_16"
+            android:gravity="center"
+            android:textColor="@color/titleTextColor"
+            android:layout_gravity="center"
+            android:text=" 客服电话：010-6270 1911"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

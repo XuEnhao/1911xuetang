@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <View
+        android:id="@+id/search_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_main_search"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_height="@dimen/dp_30">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@mipmap/main_search" />
+
+            <EditText
+                android:id="@+id/search_curriculum_searchView"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shape_main_search"
+                android:gravity="center_vertical"
+                android:textCursorDrawable="@null"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="@dimen/dp_15"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/titleTextColor"
+                android:layout_height="@dimen/dp_30" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/search_curriculum_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:textColor="#787993"
+            android:textSize="@dimen/sp_16"
+            android:gravity="center"
+            android:text="取消" />
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#eeeeee" />-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/search_refreshLayout"
+            android:layout_width="match_parent"
+            app:tr_enable_loadmore="true"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/search_recyclerView"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:overScrollMode="never"
+            android:background="#ffffff"
+            android:visibility="gone"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+        <LinearLayout
+            android:id="@+id/search_hothisLinear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--历史搜索-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_22"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/search_curriculum_History"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/titleTextColor"
+                        android:text="历史搜索" />
+
+                    <TextView
+                        android:id="@+id/search_curriculum_clearHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#BBBCCA"
+                        android:textSize="@dimen/sp_15"
+                        android:text="清除记录" />
+                </LinearLayout>
+
+                <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/search_curriculum_hisRecycler"
+                    zhy:max_select="-1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"></com.zhy.view.flowlayout.TagFlowLayout>
+                <!--<android.support.v7.widget.RecyclerView-->
+                <!---->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>-->
+
+            </LinearLayout>
+
+            <!--热门搜索-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_22"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/titleTextColor"
+                        android:text="热门搜索" />
+                </LinearLayout>
+
+                <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/search_curriculum_hotRecycler"
+                    zhy:max_select="-1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"></com.zhy.view.flowlayout.TagFlowLayout>
+                <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/search_curriculum_hotRecycler"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

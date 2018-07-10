@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="41dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:textSize="@dimen/sp_15"
+        android:id="@+id/popup_text"
+        android:button="@null"
+        android:textColor="@color/popup_text_selector"
+        android:text="1111111"
+        android:paddingLeft="38dp"
+        android:gravity="start|center_vertical"></TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee" />
+</LinearLayout>

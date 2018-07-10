@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingBottom="@dimen/dp_11"
+    android:paddingTop="@dimen/dp_11">
+
+    <ImageView
+        android:id="@+id/item_download_section_check"
+        android:layout_width="@dimen/dp_18"
+        android:layout_height="@dimen/dp_18"
+        android:layout_marginLeft="@dimen/dp_18"
+        android:background="@drawable/download_uncheck"/>
+
+    <TextView
+        android:id="@+id/item_download_section_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01"
+        android:textColor="#787993"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/item_download_section_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLength="6"
+        android:text="业务常见的风控难题 "
+        android:textColor="#787993"
+        android:textSize="@dimen/sp_15" />
+
+
+    <TextView
+        android:id="@+id/item_download_section_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginRight="@dimen/dp_13"
+        android:text="14.2M"
+        android:textColor="#BBBCCA"
+        android:textSize="@dimen/sp_14"
+        android:visibility="visible" />
+
+
+</LinearLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/edit_statusBar"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/buyRecord_back"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerVertical="true"
+            android:padding="13dp"
+            android:src="@mipmap/register_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_44"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp_15"
+            android:text="编辑信息"
+            android:textColor="#333333"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/fill_scrollView"
+        android:layout_width="match_parent"
+        android:background="@mipmap/register_background"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.yijiuyiyiedu.xuetang.module.ui.custom.CircleImageView
+                android:id="@+id/edit_userAvatar"
+                android:layout_width="@dimen/dp_86"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="@dimen/dp_86" />
+
+            <TextView
+                android:id="@+id/edit_updateAvatar"
+                android:layout_width="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_13"
+                android:gravity="center_horizontal"
+                android:text="点击更换头像" />
+
+            <EditText
+                android:id="@+id/edit_userName"
+                android:layout_width="match_parent"
+                android:textCursorDrawable="@null"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="23dp"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:paddingLeft="@dimen/dp_16"
+                android:background="@drawable/shape_fill_edit"
+                android:minHeight="50dp"
+                android:inputType="text"
+                android:hint="请输入昵称"
+                android:textColorHint="#222222"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/edit_sex"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="23dp"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:paddingLeft="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:textColor="#222222"
+                android:background="@drawable/shape_fill_edit"
+                android:text="请选择性别"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/edit_phoneNumber"
+                android:layout_width="match_parent"
+                android:textCursorDrawable="@null"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="23dp"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:focusable="false"
+                android:paddingLeft="@dimen/dp_16"
+                android:textColor="#999999"
+                android:background="@drawable/shape_fill_edit"
+                android:minHeight="50dp"
+                android:cursorVisible="false"
+                android:inputType="phone"
+                android:hint="请输入手机号"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/edit_companyName"
+                android:layout_width="match_parent"
+                android:textCursorDrawable="@null"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="23dp"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:paddingLeft="@dimen/dp_16"
+                android:focusable="false"
+                android:textColor="#999999"
+                android:background="@drawable/shape_fill_edit"
+                android:minHeight="50dp"
+                android:cursorVisible="false"
+                android:textSize="@dimen/sp_14" />
+
+
+            <com.yijiuyiyiedu.xuetang.widget.StateButton
+                android:id="@+id/edit_save"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_40"
+                android:text="保存"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                app:normalBackgroundColor="#773685"
+                app:pressedBackgroundColor="#9a37b0"
+                android:layout_marginBottom="@dimen/dp_20"
+                app:radius="@dimen/dp_5" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

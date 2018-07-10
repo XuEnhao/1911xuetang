@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#eeeeee"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:id="@+id/customProjectContent_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <RelativeLayout
+        android:id="@+id/re1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/customProjectContent_back"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerVertical="true"
+            android:padding="13dp"
+            android:src="@mipmap/register_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_44"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            android:text="提交项目"
+            android:textColor="#333333"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/customProjectContent_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_14"
+            android:textColor="#773685"
+            android:layout_marginRight="@dimen/dp_11"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:text="提交" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="#eeeeee"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="39dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_14"
+                android:textColor="#333333"
+                android:lineSpacingExtra="@dimen/sp_11"
+                android:text="请填写贵公司的需求与联系方式，1911学堂定制团队稍后会与你联系!" />
+
+            <EditText
+                android:id="@+id/customProjectContent_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="33dp"
+                android:paddingLeft="@dimen/dp_16"
+                android:background="@drawable/shape_fill_edit"
+                android:minHeight="50dp"
+                android:cursorVisible="true"
+                android:inputType="text"
+                android:hint="请输入你的姓名"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/customProjectContent_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="@dimen/dp_16"
+                android:background="@drawable/shape_fill_edit"
+                android:minHeight="50dp"
+                android:cursorVisible="true"
+                android:inputType="phone"
+                android:hint="请输入你的联系方式"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/customProjectContent_need"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@drawable/shape_fill_edit"
+                android:minHeight="@dimen/dp_150"
+                android:paddingTop="@dimen/dp_10"
+                android:maxLength="200"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:hint="请输入你的需求"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

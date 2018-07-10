@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#F8F9FB"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/dialog_picker"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:padding="@dimen/dp_15"
+        android:textSize="@dimen/sp_16"
+        android:gravity="center"
+        android:background="@drawable/shape_register_getverify"
+        android:textColor="#25265E"
+        android:text="拍照" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F8F9FB" />
+
+    <TextView
+        android:id="@+id/dialog_pickerImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:padding="@dimen/sp_15"
+        android:textSize="@dimen/sp_16"
+        android:gravity="center"
+        android:background="@drawable/shape_register_getverify"
+        android:textColor="#25265E"
+        android:text="从相册选取" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee" />
+
+
+    <TextView
+        android:id="@+id/dialog_cancel"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:padding="@dimen/sp_15"
+        android:textSize="@dimen/sp_16"
+        android:gravity="center"
+        android:background="@drawable/shape_register_getverify"
+        android:textColor="#25265E"
+        android:text="取消" />
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_6"
+    android:layout_marginRight="@dimen/dp_6"
+    android:layout_marginBottom="@dimen/dp_20">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_140"
+        android:layout_height="@dimen/dp_200">
+
+        <ImageView
+            android:id="@+id/item_newCourse_img"
+            android:layout_width="@dimen/dp_140"
+            android:layout_height="@dimen/dp_200"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="@dimen/dp_57"
+            android:orientation="vertical"
+            android:background="#80000000">
+
+            <TextView
+                android:id="@+id/item_newCourse_name"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_9"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_9"
+                android:text="御智斐" />
+
+            <TextView
+                android:id="@+id/item_newCourse_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_9"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_8"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="从清华附中到清华经管学院的本科生、研究生，最后留在清华大学工作，不知不觉间，与清华相遇16余载。" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/search_recommend_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/dp_44"-->
+    <!--android:background="#ffffff">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/applyCompanyNumber_back"-->
+    <!--android:layout_width="@dimen/dp_40"-->
+    <!--android:layout_height="@dimen/dp_40"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:padding="13dp"-->
+    <!--android:src="@mipmap/register_back" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/search_recommend_title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="@dimen/dp_44"-->
+    <!--android:text="购买课程"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:textSize="@dimen/sp_15"-->
+    <!--android:textStyle="bold"-->
+    <!--android:textColor="#333333"-->
+    <!--android:gravity="center" />-->
+    <!--</RelativeLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_main_search"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_height="@dimen/dp_26">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:src="@mipmap/main_search" />
+
+            <EditText
+                android:id="@+id/search_curriculum_searchView"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shape_main_search"
+                android:gravity="center_vertical"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="@dimen/dp_10"
+                android:hint="请输入课程、老师"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_12"
+                android:textColor="#333333"
+                android:layout_height="@dimen/dp_26" />
+        </LinearLayout>
+
+        <!--<EditText-->
+            <!--android:id="@+id/search_curriculum_searchView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/shape_main_search"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:imeOptions="actionSearch"-->
+            <!--android:paddingLeft="@dimen/dp_32"-->
+            <!--android:textSize="@dimen/sp_12"-->
+            <!--android:textColor="#333333"-->
+            <!--android:layout_margin="@dimen/dp_10"-->
+            <!--android:layout_height="@dimen/dp_26" />-->
+
+        <TextView
+            android:id="@+id/search_curriculum_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="26dp"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:textColor="#666666"
+            android:textSize="@dimen/sp_14"
+            android:gravity="center"
+            android:text="取消" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee" />
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/search_recommend_refreshLayout"
+        android:layout_width="match_parent"
+        app:tr_enable_loadmore="false"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/search_recommend_recycler"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+</LinearLayout>
